@@ -1,7 +1,7 @@
 function setup()
 {
-    createCanvas(300,300);
-    canvas.center();
+    canvas = createCanvas(300,300);
+    canvas.center( );
     video = createCapture(VIDEO);
     video.hide();
     classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/rQWQQM-c6/model.json', modelLoaded)
@@ -26,6 +26,6 @@ function gotResult(error, results)
     else{
         console.log(results);
         document.getElementById("span_result_person").innerHTML=results[0].label;
-        document.getElementById("span_result_accuracy").innerHTML=results[0].cofidence.toFixed(3);
+        document.getElementById("span_result_accuracy").innerHTML=results[0].confidence.toFixed(3);
     }
 }
